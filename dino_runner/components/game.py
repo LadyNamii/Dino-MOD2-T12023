@@ -1,6 +1,6 @@
 import pygame 
 import random
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, IMG_DIR, IMAGEM_FUNDO
+from dino_runner.utils.constants import TELA1  , BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, IMG_DIR, IMAGEM_FUNDO,SOM_DO_CENARIO
 from dino_runner.components.dinosaur import Dinosaur 
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager 
 from dino_runner.utils.text_utils import draw_message_component
@@ -50,7 +50,7 @@ class Game:
             if event.type == pygame.QUIT:
                 self.playing = False
                 self.running = False
-            
+
     def update(self):
         user_input = pygame.key.get_pressed()
         self.player.update(user_input)
@@ -93,6 +93,7 @@ class Game:
             pos_x_center=1000,
             pos_y_center=50
         )
+
 
 
     def draw_power_up_time(self):
@@ -147,5 +148,24 @@ class Game:
         pygame.display.flip()
 
         self.handle_events_on_menu()
+   
+          
+       
 
-        
+    
+       
+
+  
+   
+
+   
+
+
+   
+
+  
+       
+
+
+    pygame.display.flip()
+    

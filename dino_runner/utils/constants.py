@@ -2,19 +2,25 @@ import pygame
 import os
 
 pygame.mixer.init() 
+pygame.mixer.music.set_volume(0.05)
 
-# Global Constants
+
+
 TITLE = "Chrome Dino Runner"
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
 FPS = 30
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
-# Assets Constants
+
 ICON = pygame.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
+SOM_DO_CENARIO = pygame.mixer.music.load(os.path.join(IMG_DIR,"Other/somdocenario.wav"))
+pygame.mixer.music.play(-1)
 
 JUMP_SOUND = pygame.mixer.Sound(os.path.join(IMG_DIR,"Other/jump_sound.wav" ))
 JUMP_SOUND.set_volume(1)
+
+
 
 RUNNING = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
@@ -23,7 +29,7 @@ RUNNING = [
 
 RUNNING_SHIELD = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2Shield.png")),
 ]
 
 RUNNING_HAMMER = [
@@ -44,7 +50,7 @@ DUCKING_SHIELD = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Shield.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
 ]
-
+    
 DUCKING_HAMMER = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Hammer.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2Hammer.png")),
@@ -59,6 +65,7 @@ LARGE_CACTUS = [
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus2.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus3.png")),
+
 ]
 
 BIRD = [
@@ -68,14 +75,21 @@ BIRD = [
 
 CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
-HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
+HAMMER = pygame.image.load(os.path.join(IMG_DIR,'Other/hammer.png'))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
-IMAGEM_FUNDO = pygame.image.load(os.path.join(IMG_DIR, 'Other/fundo.png'))
-IMAGEM_FUNDO = pygame.transform.scale(IMAGEM_FUNDO, (SCREEN_WIDTH, SCREEN_HEIGHT))
+IMAGEM_FUNDO = pygame.image.load(os.path.join(IMG_DIR, 'Other/cenario.jpg'))
+IMAGEM_FUNDO = pygame.image.transform.scale(IMAGEM_FUNDO, (SCREEN_WIDTH, SCREEN_HEIGHT))
+
+TELA1 = pygame.image.load(os.path.join(IMG_DIR, 'Other/tela11.png'))
+#TELA1 = pygame.image.transform.scale(TELA1, (SCREEN_WIDTH, SCREEN_HEIGHT))
+ 
+RESERT= pygame.image.load(os.path.join(IMG_DIR, 'Other/Reset.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
 DEFAULT_TYPE = "default"
 SHIELD_TYPE = "shield"
+HAMMER_TYPE = "hammer"
+#TIME_TYPE = "time"

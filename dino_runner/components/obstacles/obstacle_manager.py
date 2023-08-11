@@ -7,7 +7,7 @@ class ObstacleManager:
 
     def __init__(self):
         self.obstacles = []
-    
+
     def update(self, game):
         image_list = [Cactus(), Bird()]
         if len(self.obstacles) == 0:
@@ -21,12 +21,12 @@ class ObstacleManager:
                     break
                 else: 
                     self.obstacles.remove(obstacle)
-    
-    
-    
+
     def reset_obstacles(self):
         self.obstacles = []
 
     def draw(self, screen):
         for obstacle in self.obstacles:
             obstacle.draw(screen)
+               
+      
